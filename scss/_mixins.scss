@@ -1,0 +1,15 @@
+@mixin list-unstyled {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+@mixin flex-box ($jc:flex-start,$ai:stretch) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+@mixin media ($min-width) {
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+}

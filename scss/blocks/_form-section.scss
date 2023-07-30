@@ -1,0 +1,188 @@
+@use "../mixins" as m;
+.heading {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  color: green;
+}
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-box__text {
+  margin: 0;
+  margin-right: 30px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 22px;
+  color: orange;
+}
+.form-box__input {
+  margin-right: 30px;
+  padding: 14px 15px;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22px;
+  color: orange;
+  border: 1.5px solid orange;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.form-box__input:focus {
+  outline: 2px solid orange;
+  -webkit-box-shadow: 0px 5px 30px 1px rgb(152, 107, 24);
+  -moz-box-shadow: 0px 5px 30px 1px rgb(152, 107, 24);
+  box-shadow: 0px 5px 30px 1px rgb(152, 107, 24);
+}
+.form-box__input::placeholder {
+  font-size: 17px;
+  color: orange;
+}
+.form-box_btn {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+  color: orange;
+  border: 1px solid orange;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.list {
+  perspective: 1500px;
+}
+.item {
+  max-width: 250px;
+  width: 100%;
+  padding: 20px;
+  border: 2px solid orange;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+}
+.item:hover {
+  -webkit-box-shadow: 0px 5px 30px 1px rgb(152, 107, 24);
+  -moz-box-shadow: 0px 5px 30px 1px rgb(152, 107, 24);
+  box-shadow: 0px 5px 30px 1px rgb(152, 107, 24);
+}
+.list__img {
+  margin: 0 auto;
+}
+.list__text {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 22px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: green;
+}
+.list__person-speed {
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 22px;
+  color: orange;
+  text-align: center;
+}
+.list__bike-speed {
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 22px;
+  color: orange;
+  text-align: center;
+}
+.list__car-speed {
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 22px;
+  color: orange;
+  text-align: center;
+}
+.list__plain-speed {
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 22px;
+  color: orange;
+  text-align: center;
+}
+
+@include m.media (280px) {
+  .heading {
+    font-size: 20px;
+    text-align: center;
+  }
+  .form-box {
+    flex-direction: column;
+  }
+  .form-box__text {
+    margin-bottom: 30px;
+  }
+  .form-box__input {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .form-box_btn {
+    max-width: 300px;
+    width: 100%;
+    padding: 14px 15px;
+  }
+  .list {
+    @include m.list-unstyled;
+    @include m.flex-box(center,center);
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  .item {
+    margin-bottom: 30px;
+  }
+}
+@include m.media (541px) {
+  .heading {
+    font-size: 30px;
+  }
+  .item:nth-child(1) {
+    margin-right: 10px;
+  }
+  .item:nth-child(3) {
+    margin-right: 10px;
+  }
+}
+@include m.media (586px) {
+  .form-box {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .form-box__text {
+    margin-bottom: 0;
+  }
+  .form-box__input {
+    max-width: 250px;
+    width: 100%;
+    margin: 0;
+    margin-right: 30px;
+  }
+  .form-box_btn {
+    max-width: 100px;
+    width: 100%;
+    padding: 8px 15px;
+  }
+}
+@include m.media (810px) {
+  .heading {
+    font-size: 50px;
+  }
+  .item:nth-child(2) {
+    margin-right: 10px;
+  }
+}
